@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from "@/app/component/Navbar";
 import Login from "@/app/component/Login";
 import ProtectedRoute from "@/app/component/ProtectedRoute";
+// import ContactInfo from "@/app/contactInfo/page"; // Ensure this path is correct
 
 const CompoNavbar = () => {
     const dispatch = useDispatch();
@@ -26,8 +27,14 @@ const CompoNavbar = () => {
             <div>
                 {/* Render the navbar only if the token is available */}
                 <ProtectedRoute>
+                    {isNavbarVisible ? (
+                        <>
 
-                    {isNavbarVisible ? <Navbar /> : <Login />}
+                            <Navbar />
+                        </>
+                    ) : (
+                        <Login />
+                    )}
                 </ProtectedRoute>
             </div>
         </>

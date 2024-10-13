@@ -1,28 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
 // import loginSlice from './features/users/loginSlice'
 import authSlice from './features/users/loginSlice';
+// import userSlice from './features/users/userSlice';
+import userSlice from './features/users/usersSlice';
 
 
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      auth:authSlice,
+      auth: authSlice,
+      users: userSlice
       },
     
   })
 }
-// store.js
-// import { configureStore } from '@reduxjs/toolkit';
-// import authReducer from './authSlice'; // Adjust the path as necessary
 
-// const store = configureStore({
-//   reducer: {
-//     auth: authReducer,
-//   },
-// });
-
-// export default store;
 
 
 

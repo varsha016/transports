@@ -5,10 +5,12 @@
 
 
 "use client"; // Ensure this component is a client component
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { Inter } from "next/font/google";
 import "./globals.css"; // Import your global CSS file
 import CompoNavbar from "@/app/CompoNavbar";
+
 import StoreProvider from "@/app/StoreProvider"; // Ensure this path is correct
 // import ProtectedRoute from '@/app/component/ProtectedRoute';
 
@@ -30,7 +32,7 @@ export default function RootLayout({ children }) {
         <StoreProvider>
 
           <CompoNavbar />
-          <div className="bg-gray-100">
+          <div className="">
             {children}
           </div>
         </StoreProvider>

@@ -7,40 +7,47 @@ connect();
 export async function POST(request) {
   try {
     const reqBody = await request.json();
-    const { 
-      name,
+    const {
+      branch,
       lrNo,
       lrDate,
       vehNo,
+      vehType,
       consignorName,
       consigneeName,
+      // partyOfDelivery,
+      from1,
+      from2,
+      to1,
+      to2,
       modeOfFreight,
-      octroiNaka,
-      paidBy,
       branchOfBilling,
-      octRecdFrom,
-      loadingPlace,
+      // octRecdFrom,
       placeOfLoading,
-      formNo,
-      collectionInfo,
+      materialDesc,
       delivery,
-      placeOfDelivery,
-      materialDescription,
+      deliveryAt,
+      collection,
+      placeOfCollection,
       quantity,
-      quantitySample,
+      qtyPacking,
+      nos,
+      nosPacking,
       actualWeight,
       chargedWeight,
-      orderBy,
+      eWayBillNo,
+      eWayExpireDate,
       invoiceNo,
       goodsValue,
-      freightChargeType,
-      serviceTaxBy,
-      rate,
-      grossTotal,
-      serviceTax,
-      educationCess,
-      netTotal,
-      lrRemarks
+      ledgerName,
+      debit,
+      credit,
+      // amount,
+      // company,
+      // details,
+      narration,
+      lrRemarks,
+      rows // Ensure you're destructuring rows from the request body
     } = reqBody;
 
     // Log the request body for debugging
@@ -51,55 +58,50 @@ export async function POST(request) {
     const parsedActualWeight = Number(actualWeight);
     const parsedChargedWeight = Number(chargedWeight);
     const parsedGoodsValue = Number(goodsValue);
-    const parsedRate = Number(rate);
-    const parsedGrossTotal = Number(grossTotal);
-    const parsedServiceTax = serviceTax ? Number(serviceTax) : undefined;
-    const parsedEducationCess = educationCess ? Number(educationCess) : undefined;
-    const parsedNetTotal = Number(netTotal);
-
-    // Validate required fields
-    if (!name || !lrNo || !parsedLRDate || !vehNo ||
-        !consignorName || !consigneeName || !loadingPlace || !materialDescription ||
-        isNaN(parsedActualWeight) || isNaN(parsedChargedWeight) || isNaN(parsedGoodsValue) ||
-        isNaN(parsedRate) || isNaN(parsedGrossTotal) || isNaN(parsedNetTotal)) {
-      return NextResponse.json({ error: 'Missing or invalid required fields' }, { status: 400 });
-    }
+    // const parsedAmount = amount ? Number(amount) : undefined;
 
     // Create a new LREntry
     const newLREntry = new LREntry({
-      name,
+      branch,
       lrNo,
       lrDate: parsedLRDate,
       vehNo,
+      vehType,
       consignorName,
       consigneeName,
+      // partyOfDelivery,
+      from1,
+      from2,
+      to1,
+      to2,
       modeOfFreight,
-      octroiNaka,
-      paidBy,
+      // octRecdFrom,
       branchOfBilling,
-      octRecdFrom,
-      loadingPlace,
       placeOfLoading,
-      formNo,
-      collectionInfo,
+      materialDesc,
       delivery,
-      placeOfDelivery,
-      materialDescription,
+      deliveryAt,
+      collection,
+      placeOfCollection,
       quantity,
-      quantitySample,
+      qtyPacking,
+      nos,
+      nosPacking,
       actualWeight: parsedActualWeight,
       chargedWeight: parsedChargedWeight,
-      orderBy,
+      eWayBillNo,
+      eWayExpireDate,
       invoiceNo,
       goodsValue: parsedGoodsValue,
-      freightChargeType,
-      serviceTaxBy,
-      rate: parsedRate,
-      grossTotal: parsedGrossTotal,
-      serviceTax: parsedServiceTax,
-      educationCess: parsedEducationCess,
-      netTotal: parsedNetTotal,
-      lrRemarks
+      ledgerName,
+      debit,
+      credit,
+      // amount: parsedAmount,
+      // company,
+      // details,
+      narration,
+      lrRemarks,
+      rows // Include rows in the new entry
     });
 
     // Log the new entry for debugging
