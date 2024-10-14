@@ -12,18 +12,9 @@ import React, { useEffect, useState } from 'react';
 // const LREntryTable = ({ handleEditClick }) => {
 const LREntryTable = () => {
   const router = useRouter()
-  // Ensure allLRs is an array
-  // const lrEntries = Array.isArray(allLRs) ? allLRs : [];
-  // if (loading) {
-  //     return <Spinner />;
 
-  //   }
-  // console.log(allLRs, "hello allLRs");
-  // console.log(lrEntries, "hello allLRs");
-  // console.log(allLRs, "hello allLRs");
 
   const [allLRs, setAllLRs] = useState([])
-  // const route = useRouter()
   const fetchAllLRs = async () => {
     const response = await axios.get('/api/getLREntry')
     // const data = await response.json()
@@ -34,15 +25,8 @@ const LREntryTable = () => {
   useEffect(() => {
     fetchAllLRs()
     console.log('data KKKKKKKKKKKKK')
+  }, [fetchAllLRs])
 
-
-
-  }, [])
-  //  useEffect(() => {
-  //   if (allLRs?.length > 0) {
-  //     console.log(allLRs);
-  //   }
-  // }, [allLRs]);
 
 
   const handleEditClick = (id) => {
@@ -62,7 +46,7 @@ const LREntryTable = () => {
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Edit Data</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consignor Name</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consignee Name</th>
-            {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Material Description</th> */}
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Material Description</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Loading Place</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Paid By</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mode of Freight</th>
@@ -70,10 +54,7 @@ const LREntryTable = () => {
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charged Weight</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice No</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Goods Value</th>
-            {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Freight Charge Type</th> */}
-            {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rate</th> */}
-            {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gross Total</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Net Total</th> */}
+
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LR Remarks</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created At</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Updated At</th>
@@ -93,15 +74,12 @@ const LREntryTable = () => {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.placeOfLoading}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.modeOfFreight}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.paidBy}</td>
-              {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.materialDescription}</td> */}
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.materialDescription}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.actualWeight}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.chargedWeight}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.invoiceNo}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.goodsValue}</td>
-              {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.freightChargeType}</td> */}
-              {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.rate}</td> */}
-              {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.grossTotal}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.netTotal}</td> */}
+
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.lrRemarks}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(lr.createdAt).toLocaleString()}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(lr.updatedAt).toLocaleString()}</td>

@@ -11,6 +11,8 @@ const OurServices = () => {
     return (
         <div className="bg-white py-16">
             {/* Title Section */}
+            <p>Here&apos;s the problem!</p>
+
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold uppercase tracking-wide">Our Services</h2>
                 <div className="flex justify-center items-center mt-4">
@@ -23,7 +25,7 @@ const OurServices = () => {
             {/* Services Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-16">
                 {/* Service Card 1 */}
-                <motion.div 
+                <motion.div
                     className="bg-gray-100 p-6 rounded-lg flex items-center shadow-lg"
                     variants={cardVariants}
                     initial="hidden"
@@ -44,7 +46,7 @@ const OurServices = () => {
                 </motion.div>
 
                 {/* Service Card 2 */}
-                <motion.div 
+                <motion.div
                     className="bg-gray-100 p-6 rounded-lg flex items-center shadow-lg"
                     variants={cardVariants}
                     initial="hidden"
@@ -65,7 +67,7 @@ const OurServices = () => {
                 </motion.div>
 
                 {/* Service Card 3 */}
-                <motion.div 
+                <motion.div
                     className="bg-gray-100 p-6 rounded-lg flex items-center shadow-lg"
                     variants={cardVariants}
                     initial="hidden"
@@ -86,7 +88,7 @@ const OurServices = () => {
                 </motion.div>
 
                 {/* Service Card 4 */}
-                <motion.div 
+                <motion.div
                     className="bg-gray-100 p-6 rounded-lg flex items-center shadow-lg"
                     variants={cardVariants}
                     initial="hidden"

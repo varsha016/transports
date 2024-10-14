@@ -115,23 +115,7 @@ const AddMemoForm = () => {
     }, [])
 
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const response = await dispatch(fetchAllLRsAction());
-    //         console.log(response, 'response');
-    //     };
 
-    //     fetchData();
-
-    //     console.log('data KKKKKKKKKKKKK');
-
-    //     // Optional cleanup (if needed)
-    //     return () => {
-    //         // Cleanup code goes here
-    //     };
-    // }, [dispatch]);
-
-    // Filter the allLRs array for vehicleNo "44" and bind it to the form
     useEffect(() => {
         if (allLRs && allLRs?.length > 0) {
             console.log(allLRs, 'allLRs data');
@@ -223,7 +207,7 @@ const AddMemoForm = () => {
             <h2 className="text-2xl font-bold text-center mb-6 text-white bg-gray-500 rounded-sm p-2">
                 Memo Form
             </h2>
-
+            <p>It&apos;s a beautiful day!</p>
             {/* Memo Type */}
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="flex items-center">
@@ -625,107 +609,3 @@ const AddMemoForm = () => {
 
 export default AddMemoForm;
 
-// export const previousLrData = () => {
-//     return <>
-//         <h1>hello</h1>
-//         <table className="min-w-full divide-y divide-gray-200">
-//             <thead className="bg-gray-100">
-//                 <tr>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">SrNo</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Destination</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LR No</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LR Date</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consignee</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Qty</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> Weight</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LR Type</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-//                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Delivery</th>
-
-//                 </tr>
-//             </thead>
-//             <tbody className="bg-white divide-y divide-gray-200">
-
-
-//             </tbody>
-//         </table>
-//     </>
-// }
-
-
-// {/* <div className="w-full lg:w-3/4"> {/* Responsive width adjustment */}
-
-//     <div className="relative overflow-x-auto mr-4 max-h-[300px] overflow-y-auto">
-//         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-//             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-//                 <tr>
-//                     <th scope="col" className="px-6 py-3">Ledger name</th>
-//                     <th scope="col" className="px-6 py-3">Debit</th>
-//                     <th scope="col" className="px-6 py-3">Credit</th>
-//                     <th scope="col" className="px-6 py-3">Narration</th>
-//                     <th scope="col" className="px-6 py-3">Actions</th>
-//                 </tr>
-//             </thead>
-//             <tbody>
-//                 {lrEntryData?.rows?.map((row, index) => (
-//                     <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-//                         <td className="px-2 py-4">
-//                             <input
-//                                 type="text"
-//                                 value={row.ledgerName}
-//                                 readOnly={!isEditing}
-//                                 onChange={(e) => handleInputChange(index, 'ledgerName', e.target.value)}
-//                                 placeholder='Enter Ledger Name'
-//                                 className={`px-2 py-1 w-32 border-gray-300 rounded-md shadow-sm
-//                                 focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50
-//                                 ${!isEditing ? 'bg-gray-200' : 'bg-white'}`}
-//                             />
-//                         </td>
-//                         <td className="px-2 py-4">
-//                             <input
-//                                 type="text"
-//                                 value={row.credit}
-//                                 readOnly={!isEditing}
-//                                 onChange={(e) => handleInputChange(index, 'credit', e.target.value)}
-//                                 className={`px-2 py-1 w-32 border-gray-300 rounded-md shadow-sm
-//                                 focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50
-//                                 ${!isEditing ? 'bg-gray-200' : 'bg-white'}`}
-//                             />
-//                         </td>
-//                         <td className="px-2 py-4">
-//                             <input
-//                                 type="text"
-//                                 value={row.debit}
-//                                 onChange={(e) => handleInputChange(index, 'debit', e.target.value)}
-//                                 className={`px-2 py-1 w-32 border-gray-300 rounded-md shadow-sm
-//                                 focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50
-//                                 ${!isEditing ? 'bg-gray-200' : 'bg-white'}`}
-//                             />
-//                         </td>
-
-//                         <td className="px-2 py-4">
-//                             <input
-//                                 type="text"
-//                                 value={row.narration}
-//                                 readOnly={!isEditing}
-//                                 onChange={(e) => handleInputChange(index, 'narration', e.target.value)}
-//                                 className={`px-2 py-1 w-32 border-gray-300 rounded-md shadow-sm
-//                                 focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50
-//                                 ${!isEditing ? 'bg-gray-200' : 'bg-white'}`}
-//                             />
-//                         </td>
-//                         <td className="px-6 py-4">
-//                             <button
-//                                 onClick={() => handleDeleteRowClick(index)}
-//                                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
-//                             >
-//                                 Delete
-//                             </button>
-//                         </td>
-//                     </tr>
-//                 ))}
-//             </tbody>
-//         </table>
-//     </div>
-
-// </div> */}

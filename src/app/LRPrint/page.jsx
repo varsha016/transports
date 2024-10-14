@@ -24,8 +24,10 @@ const LRPrint = forwardRef(({ allLRSData }, ref) => {
                             <tr key={entry._id} style={{ borderBottom: "1px solid #ddd" }}>
                                 <td style={{ padding: "8px" }}>{entry._id}</td>
                                 <td style={{ padding: "8px" }}>{entry.lrNo || "N/A"}</td>
-                                <td style={{ padding: "8px" }}>{entry.lrDate || "N/A"}</td>
-                                <td style={{ padding: "8px" }}>{new Date(entry.lrDate).toLocaleDateString()}</td>
+                                <td style={{ padding: "8px" }}>{entry.amount || "N/A"}</td>
+                                <td style={{ padding: "8px" }}>
+                                    {entry.lrDate ? new Date(entry.lrDate).toLocaleDateString() : "N/A"}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -34,5 +36,8 @@ const LRPrint = forwardRef(({ allLRSData }, ref) => {
         </div>
     );
 });
+
+// Set display name for better debugging
+LRPrint.displayName = "LRPrint";
 
 export default LRPrint;

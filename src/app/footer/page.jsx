@@ -13,7 +13,7 @@ const Footer = () => {
                         <h2 className="text-lg font-bold">ABOUT US</h2>
                         <p>
                             <p className='flex gap-3 text-lg font-bold'>
-                                <Image src={logo1} className='w-16 h-16 ' />
+                                <Image src={logo1} className='w-16 h-16 ' alt='logo' />
                                 <span className='py-4'> Vishwas Transport</span>
                             </p>
                             Transport offers a host of logistic management services and supply chain solutions. We provide innovative solutions with the best people, processes, and technology.
