@@ -338,7 +338,7 @@ const AddMemoForm = () => {
             {/* Vehicle Owner's and Telephone No */}
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="flex items-center">
-                    <label className="text-sm font-semibold mr-4 w-24">Vehicle Owner's:</label>
+                    <label className="text-sm font-semibold mr-4 w-24">Vehicle Owners:</label>
                     <input
                         type="text"
                         name="vehicleOwner"

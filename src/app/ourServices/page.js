@@ -41,7 +41,7 @@ const OurServices = () => {
                     </div>
                     <div className="ml-4">
                         <h3 className="text-xl font-bold uppercase">Ground Transport</h3>
-                        <p className="text-gray-600">Transport began providing transportation solutions to Transport's contract warehousing customers in the 1980s.</p>
+                        <p className="text-gray-600">Transport began providing transportation solutions to Transports contract warehousing customers in the 1980s.</p>
                     </div>
                 </motion.div>
 

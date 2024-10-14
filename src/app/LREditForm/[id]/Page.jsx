@@ -38,7 +38,7 @@ const EditLREntry = () => {
         if (id) {
             fetchLREntryData();
         }
-    }, [id]);
+    }, [fetchLREntryData]);
 
     // Handle form input change
     const handleChange = (e) => {

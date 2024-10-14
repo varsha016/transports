@@ -14,14 +14,17 @@ const LREntryTable = () => {
   const router = useRouter()
 
 
-  const [allLRs, setAllLRs] = useState([])
-  const fetchAllLRs = async () => {
+  // const [allLRs, setAllLRs] = useState([])
+  // const fetchAllLRs = async () => {
+
+  const fetchAllLRs = useCallback(async () => {
     const response = await axios.get('/api/getLREntry')
     // const data = await response.json()
     console.log(response.data, 'data')
     setAllLRs(response.data?.data)
     // setLoading(true)
-  }
+  }, [])
+
   useEffect(() => {
     fetchAllLRs()
     console.log('data KKKKKKKKKKKKK')
