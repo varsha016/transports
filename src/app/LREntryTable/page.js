@@ -1,7 +1,7 @@
 "use client";
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 // const Spinner = () => (
 //   <div className="flex justify-start items-start h-32 ml-36">
@@ -14,7 +14,7 @@ const LREntryTable = () => {
   const router = useRouter()
 
 
-  // const [allLRs, setAllLRs] = useState([])
+  const [allLRs, setAllLRs] = useState([])
   // const fetchAllLRs = async () => {
 
   const fetchAllLRs = useCallback(async () => {

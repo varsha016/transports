@@ -108,14 +108,16 @@
 // export default CustomSlider;
 
 // components/CustomSlider.js
+"use client"
 import Slider from "react-slick";
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-import truck_one from "./../../../asset/image/truck_one.jpg";
-import truck_two from "./../../../asset/image/truck_two.jpg";
-import truck_three from "./../../../asset/image/truck_three.jpg";
-import truck_six from "./../../../asset/image/transportation-1495618_1280.jpg";
+import truck_one from "../../asset/image/truck_one.jpg";
+import truck_two from "../../asset/image/truck_two.jpg";
+import truck_three from "../../asset/image/truck_three.jpg";
+import truck_six from "../../asset/image/transportation-1495618_1280.jpg";
+import { useEffect, useState } from "react";
 
 // Custom Previous Arrow
 const PreviousArrow = ({ className, style, onClick }) => (
@@ -157,7 +159,7 @@ const NextArrow = ({ className, style, onClick }) => (
     </div>
 );
 
-const CustomSlider = () => {
+const SliderComponent = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -184,7 +186,15 @@ const CustomSlider = () => {
             />
         ),
     };
+    const [isMounted, setIsMounted] = useState(false);
 
+    useEffect(() => {
+        setIsMounted(true); // Set to true after the component mounts
+    }, []);
+
+    if (!isMounted) {
+        return null; // Render nothing during server-side rendering
+    }
     return (
         <div className="mx-auto my-1 py-2 bg-black shadow-lg opacity-90 relative">
             <Slider {...settings}>
@@ -215,4 +225,4 @@ const CustomSlider = () => {
     );
 };
 
-export default CustomSlider;
+export default SliderComponent;
