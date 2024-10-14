@@ -28,6 +28,6 @@
     ".next/types/**/*.ts",
     "src/app/layout.jsx",
     "src/app/layout-metadata.js"
-  ],
+, "src/app/page.jsx"  ],
   "exclude": ["node_modules"]
 }
