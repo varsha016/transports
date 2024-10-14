@@ -112,10 +112,10 @@ import Slider from "react-slick";
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-import truck_one from "../../asset/image/truck_one.jpg";
-import truck_two from "../../asset/image/truck_two.jpg";
-import truck_three from "../../asset/image/truck_three.jpg";
-import truck_six from "../../asset/image/transportation-1495618_1280.jpg";
+import truck_one from "./../../../asset/image/truck_one.jpg";
+import truck_two from "./../../../asset/image/truck_two.jpg";
+import truck_three from "./../../../asset/image/truck_three.jpg";
+import truck_six from "./../../../asset/image/transportation-1495618_1280.jpg";
 
 // Custom Previous Arrow
 const PreviousArrow = ({ className, style, onClick }) => (

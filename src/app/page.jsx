@@ -33,7 +33,7 @@ import truck from "@/asset/image/loginpageimg.jpg"; // Importing the truck image
 
 export default function Home() {
   const { isAuthenticated, token, userType } = useSelector(
-    (state: any) => state.auth
+    (state) => state.auth
   );
   console.log(
     "Authenticated:",
@@ -48,10 +48,10 @@ export default function Home() {
     <main
       className="min-h-screen flex justify-center items-center bg-cover bg-center"
       style={{
-        backgroundImage: `url(${truck.src})`, // Using the imported truck image as background
+        backgroundImage: `url(${truck})`, // Corrected to use truck directly
       }}
     >
-      <div className=" mr-[48rem]  bg-opacity-90 p-8 rounded-2xl shadow-lg max-w-md w-full">
+      <div className="mr-[48rem] bg-opacity-90 p-8 rounded-2xl shadow-lg max-w-md w-full">
         <Login />
       </div>
     </main>
