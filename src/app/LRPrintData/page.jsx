@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
-const LRPrint = forwardRef(({ allLRSData }, ref) => {
-    console.log("All LR Data:", allLRSData); // Log the data passed to LRPrint
+const LRPrintData = forwardRef(({ allLRSData }, ref) => {
+    console.log("All LR Data:", allLRSData); // Log the data passed to LRPrintData
 
     return (
         <div ref={ref} style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
@@ -38,6 +38,6 @@ const LRPrint = forwardRef(({ allLRSData }, ref) => {
 });
 
 // Set display name for better debugging
-LRPrint.displayName = "LRPrint";
+LRPrintData.displayName = "LRPrintData";
 
-export default LRPrint;
+export default LRPrintData;

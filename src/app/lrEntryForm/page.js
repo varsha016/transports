@@ -2,9 +2,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useReactToPrint } from "react-to-print";
 import { useDispatch, useSelector } from 'react-redux';
-import { addAllLRsAction, fetchAllLRsAction, updateLRAction } from '../lib/features/users/usersSlice';
-// import LREntryTable from "@/app/LREntryTable/page"
-import LRPrint from "@/app/LRPrint/page"
+import { fetchAllLRsAction } from '../lib/features/users/usersSlice';
+// import LRPrintData from '../LRPrintData/page';
 
 const LREntryForm = () => {
   const dispatch = useDispatch();
