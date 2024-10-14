@@ -22,11 +22,11 @@
 
 
 import mongoose from "mongoose";
-import { EventEmitter } from "events"; // Import EventEmitter
+import { EventEmitter } from "events";
 
-// Optional: Create an instance of EventEmitter and set max listeners
+// Create an instance of EventEmitter and set max listeners
 const myEmitter = new EventEmitter();
-myEmitter.setMaxListeners(20); // Set max listeners for this instance
+myEmitter.setMaxListeners(20); // Increase as needed
 
 export async function connect() {
     console.log(process.env.MONGODB_URI, process.env.JWT_SECRET, ":varsha");
@@ -53,3 +53,4 @@ export async function connect() {
         console.log(error);
     }
 }
+
