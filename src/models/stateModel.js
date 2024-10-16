@@ -1,21 +1,20 @@
 // /models/stateModel.js
 import mongoose from 'mongoose';
-import { type } from 'os';
 
 const stateSchema = new mongoose.Schema({
   _id: {
-        // type: mongoose.Schema.Types.ObjectId,
-      type:String
+    // type: mongoose.Schema.Types.ObjectId,
+    type: String
     // required: true,
   },
   id: {
     type: String,
     required: true,
   },
-  cid: {
-    type: String,
-    required: true,
-  },
+  // cid: {
+  //   type: String,
+  //   required: true,
+  // },
   name: {
     type: String,
     required: true,

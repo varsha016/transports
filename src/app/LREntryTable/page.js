@@ -46,7 +46,7 @@ const LREntryTable = () => {
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-100">
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Edit Data</th>
+            {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Edit Data</th> */}
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consignor Name</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consignee Name</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Material Description</th>
@@ -66,12 +66,12 @@ const LREntryTable = () => {
         <tbody className="bg-white divide-y divide-gray-200">
           {allLRs?.map(lr => (
             <tr key={lr._id}>
-              <td onClick={() => handleEditClick(lr._id)} className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
+              {/* <td onClick={() => handleEditClick(lr._id)} className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
 
                 Edit
 
 
-              </td>
+              </td> */}
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.consignorName}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.consigneeName}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lr.placeOfLoading}</td>

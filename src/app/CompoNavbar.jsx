@@ -7,7 +7,7 @@ import ProtectedRoute from "@/app/component/ProtectedRoute";
 // import ContactInfo from "@/app/contactInfo/page"; // Ensure this path is correct
 
 const CompoNavbar = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const { token } = useSelector((state) => state.auth);
 
     // State to control when to show the navbar

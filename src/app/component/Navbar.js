@@ -111,13 +111,28 @@ const Navbar = () => {
                 <div className="absolute hidden group-hover:block bg-gray-600 text-white py-2 w-40 rounded-md mt-2 shadow-lg z-20">
                   <ul className="flex flex-col">
                     <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
-                      <Link href="/master/sub-option-1">Sub Option 1</Link>
+                      <Link href="/vehicleTypes">VehicleTypes</Link>
                     </li>
                     <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
-                      <Link href="/master/sub-option-2">Sub Option 2</Link>
+                      <Link href="/LocationForm">LocationForm</Link>
                     </li>
                     <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
-                      <Link href="/master/sub-option-3">Sub Option 3</Link>
+                      <Link href="/freightCharge">FreightCharge</Link>
+                    </li>
+                    <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
+                      <Link href="/packingTypes">PackingTypes</Link>
+                    </li>
+                    <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
+                      <Link href="/consignerForm">ConsignerForm</Link>
+                    </li>
+                    <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
+                      <Link href="/brokersForm">BrokersForm</Link>
+                    </li>
+                    <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
+                      <Link href="/Branches">Branches</Link>
+                    </li>
+                    <li className="hover:bg-gray-800 hover:text-lg px-4 py-2">
+                      <Link href="/OpeningBillsForm">OpeningBillsForm</Link>
                     </li>
                   </ul>
                 </div>

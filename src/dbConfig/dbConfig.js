@@ -29,7 +29,11 @@ const myEmitter = new EventEmitter();
 myEmitter.setMaxListeners(20); // Increase as needed
 
 export async function connect() {
-    console.log(process.env.MONGODB_URI, process.env.JWT_SECRET, ":varsha");
+    // console.log(process.env.MONGODB_URI, process.env.JWT_SECRET, ":varsha");
+    // if (mongoose.connections[0].readyState) {
+    //     console.log("Already connected");
+    //     return;
+    // }
 
     try {
         await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/nextauth", {
