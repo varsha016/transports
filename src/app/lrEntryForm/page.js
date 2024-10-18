@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useReactToPrint } from "react-to-print";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllLRsAction } from '../lib/features/users/usersSlice';
+import { fetchAllLRsAction, updateLRAction } from '../lib/features/users/usersSlice';
 
 
 const LREntryForm = () => {
